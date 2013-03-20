@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-"""
-    Author:cleverdeng
-    E-mail:clverdeng@gmail.com
-"""
+
 from distutils.core import setup
 from pinyin import __version__ as version
 
 setup(
             name='pinyin',
             version=version,
-            description='hanzi -> pinyin,With Python',
-            author='cleverdeng',
-            author_email='cleverdeng@gmail.com',
-            url='http://github.com/cleverdeng/pinyin.py',
+            description='Simplified or Traditional Chinese -> pinyin,With Python',
+            author='Qingfeng Xia',
+            author_email='qingfeng dot xia@gmail.com',
+            url='http://github.com/qingfengxia/pinyin.py',
             py_modules=['pinyin'],
             license='MIT License',
             platforms=['any'],
