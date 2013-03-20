@@ -31,7 +31,7 @@
         (4) Unicode for  greater Chinese charset: CJKV:  4E00-9FFF,  
               this pinyin.data (0x3400-9F2D) and (0x20000-0x2B6F8)
                    
-################################################   
+
 from pinyin import Pinyin
 def test_console(encoding='cp936'):
     import os
