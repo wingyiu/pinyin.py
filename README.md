@@ -3,13 +3,12 @@
     Origin:      Author:cleverdeng      E-mail:clverdeng@gmail.com (not reachable)
     
     forked by QingfengXia based on v0.9:  
-                   (1)renamed class name from PinYin to Pinyin 
-                   (2) for easy deployment, just copy pinyin.py and word.data into a folder/site-packages
+                   (1)renamed class name from PinYin to Pinyin, 
+                   (2)dict file "word.data"  is  renamed  as "pinyin.data" 
                    (3) add encoding support, or it will not work for windows cmd prompt! 
                    (4) move load_word() (renamed as loaddict() ) into __init__(), to make API concise
                    (5) word.data  "ord(UNICODE)= list of pinyin", for quick loading and human readable check
                       why some unicode has multiple pinyin units??? 
-                   (6) word.data  is  renamed  as "pinyin.data"
                    
     installation: 
                    copy the two files:  pinyin.py, pinyin.data , into your project folder, or under $PYTHONPATH
@@ -18,14 +17,14 @@
                    python -m pinyin.py
                    
     suggested new features: 
-                      (1)  traditional chinese support:    add new pairs into data file, using pinyin4j 's pinyindb
+                      (1)  traditional chinese support:    done!
                       (2)  repr()   print the tones, print in two lines,  first line using ASCII char as tone -- / \ V
-                      (3)  other  pinyin romanization resprensation styles:  Yale, Wade-Giles, etc
+                      (3)  other  pinyin romanization styles:  Yale, Wade-Giles, etc, using pinyin4j 's pinyindb
                       (4) consider python 3.x support: by replace print with print_function  for test()
                       (5) performance improvement, using better container than dict
                       
     see also: 
-        (1) ruby    "Rubyºº×Ö×ªÆ´Òô hanzi_to_pinyin" 
+        (1) ruby    "Ruby module:  hanzi_to_pinyin" 
               java  pinyin4j:   supports  6 pinyin resprensation styles:  Yale, Wade-Giles, etc
         (2) ibus-pinyin: phrase 
         (3) oopinyinguide: openoffice 3.x extension
@@ -49,12 +48,12 @@ if __name__ == "__main__":
     test = Pinyin()
     #
     print "test with utf8 console encoding"
-    string = "µöÓãµºÊÇÖĞ¹úµÄ"  #utf8  simplified chinese
+    string = "é’“é±¼å²›æ˜¯ä¸­å›½çš„"  #utf8  simplified chinese
     print "in: %s" % string
     print "out: %s" % str(test.hanzi2pinyin(string, showingtone=True))
     print "out: %s" % test.hanzi2pinyin_split(string, split="-")
     #
-    str2="áô~uÊÇÌ¨³µÄÒ²ÊÇÖĞ‡øµÄ" #utf8 traditional chinese
+    str2="é‡£é­šå³¶æ˜¯å°ç£çš„ä¹Ÿæ˜¯ä¸­åœ‹çš„" #utf8 traditional chinese
     print "in: %s" % str2
     print "out: %s" % str(test.hanzi2pinyin(str2, showingtone=True))
     #test()
