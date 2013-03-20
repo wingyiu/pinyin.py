@@ -31,29 +31,29 @@
         (4) Unicode for  greater Chinese charset: CJKV:  4E00-9FFF,  
               this pinyin.data (0x3400-9F2D) and (0x20000-0x2B6F8)
                    
-
-from pinyin import Pinyin
-def test_console(encoding='cp936'):
-    import os
-    if os.name=='nt':
-        print "POSIX os input encoding is utf-8, for windows try cp936/gbk for simplified"
-        test2=Pinyin(encoding=encoding)
-        print "str(test.hanzi2pinyin(string)"
-        s=raw_input("input hanzi string in windows console") # only for python 2.x
-        print "pinyin for input hanzi are:"
-        print test2.hanzi2pinyin(s)
-                
-
-if __name__ == "__main__":
-    test = Pinyin()
-    #
-    print "test with utf8 console encoding"
-    string = "钓鱼岛是中国的"  #utf8  simplified chinese
-    print "in: %s" % string
-    print "out: %s" % str(test.hanzi2pinyin(string, showingtone=True))
-    print "out: %s" % test.hanzi2pinyin_split(string, split="-")
-    #
-    str2="釣魚島是台灣的也是中國的" #utf8 traditional chinese
-    print "in: %s" % str2
-    print "out: %s" % str(test.hanzi2pinyin(str2, showingtone=True))
-    #test()
+    example:
+    from pinyin import Pinyin
+    def test_console(encoding='cp936'):
+        import os
+        if os.name=='nt':
+            print "POSIX os input encoding is utf-8, for windows try cp936/gbk for simplified"
+            test2=Pinyin(encoding=encoding)
+            print "str(test.hanzi2pinyin(string)"
+            s=raw_input("input hanzi string in windows console") # only for python 2.x
+            print "pinyin for input hanzi are:"
+            print test2.hanzi2pinyin(s)
+                    
+    
+    if __name__ == "__main__":
+        test = Pinyin()
+        #
+        print "test with utf8 console encoding"
+        string = "钓鱼岛是中国的"  #utf8  simplified chinese
+        print "in: %s" % string
+        print "out: %s" % str(test.hanzi2pinyin(string, showingtone=True))
+        print "out: %s" % test.hanzi2pinyin_split(string, split="-")
+        #
+        str2="釣魚島是台灣的也是中國的" #utf8 traditional chinese
+        print "in: %s" % str2
+        print "out: %s" % str(test.hanzi2pinyin(str2, showingtone=True))
+        #test()
